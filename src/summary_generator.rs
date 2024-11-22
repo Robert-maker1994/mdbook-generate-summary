@@ -2,7 +2,7 @@ use mdbook::book::{Book};
 use mdbook::errors::Result;
 use mdbook::preprocess::Preprocessor;
 use mdbook::preprocess::PreprocessorContext;
-
+ 
 pub struct SummaryGenerator;
 const SUMMARY_NAME: &str = "summary-generator";
 
