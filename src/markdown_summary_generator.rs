@@ -5,6 +5,10 @@ use std::{
     path::{Path, PathBuf},
 };
 
+// TODO 
+// Tests 
+// Documentation 
+
 pub struct MarkdownSummaryGenerator {
     root: PathBuf,
 }
@@ -59,7 +63,7 @@ fn write(&self, folders: Vec<String>, root: &Path) -> Result<()> {
         let indent_level = path.matches('/').count();
         let indent = "  ".repeat(indent_level);
         
-        if path.ends_with(".md") && !path.contains("README") {
+        if path.ends_with(".md") && !path.contains("README") && !path.contains("SUMMARY.md"){
             writeln!(
                 summary,
                 "{}- [{}]({})",
@@ -69,10 +73,10 @@ fn write(&self, folders: Vec<String>, root: &Path) -> Result<()> {
             )
             .expect("Failed to write to summary file");
         } else {
-            if  !path.ends_with("rs") && !path.contains("README") {
+            if  !path.ends_with("rs") && !path.contains("README") && !path.contains("SUMMARY.md") {
 
                 let p = path.ends_with(|c: char| c.is_alphabetic());
-                println!("p {}", path);
+
                 if p {
                     writeln!(
                         summary,
