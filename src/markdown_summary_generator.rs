@@ -5,9 +5,6 @@ use std::{
     path::{Path, PathBuf},
 };
 
-// TODO 
-// Tests 
-// Documentation 
 
 pub struct MarkdownSummaryGenerator {
     root: PathBuf,
